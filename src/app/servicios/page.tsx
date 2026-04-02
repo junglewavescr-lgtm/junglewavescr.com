@@ -92,7 +92,7 @@ export default function Servicios() {
           <p className="text-center text-gray-600 mt-3 mb-12">
             Un enfoque sistemático para garantizar resultados excepcionales
           </p>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {[
               "Consulta Gratuita",
               "Evaluación del Espacio",
@@ -100,16 +100,13 @@ export default function Servicios() {
               "Ejecución del Trabajo",
               "Seguimiento",
             ].map((step, i) => (
-              <div key={step} className="flex items-center gap-4 md:flex-col md:gap-3 md:px-6">
+              <div key={step} className="flex flex-col items-center text-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-jungle-green text-white flex items-center justify-center font-heading font-bold text-lg flex-shrink-0">
                   {i + 1}
                 </div>
-                <h3 className="font-heading font-semibold text-dark text-center text-sm">
+                <h3 className="font-heading font-semibold text-dark text-sm">
                   {step}
                 </h3>
-                {i < 4 && (
-                  <div className="hidden md:block w-12 h-0.5 bg-gray-300 absolute" />
-                )}
               </div>
             ))}
           </div>

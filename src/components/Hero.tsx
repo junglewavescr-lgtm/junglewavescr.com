@@ -29,58 +29,71 @@ export default function Hero({
       className={`relative flex items-center justify-center text-white ${
         isShort ? "min-h-[300px] pt-16" : "min-h-screen"
       }`}
+      style={{
+        backgroundImage: `url('${bgImage}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <Image
-        src={bgImage}
-        alt=""
-        fill
-        className="object-cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-black/20" />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {showLogo && (
-          <Image
-            src="/img/logo-negro.jpg"
-            alt="Jungle Waves"
-            width={100}
-            height={100}
-            className="mx-auto mb-6 rounded-lg"
-          />
-        )}
-        <h1
-          className={`font-heading font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] ${
-            isShort ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl lg:text-6xl"
-          }`}
-        >
-          {title}
-        </h1>
+      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+          {showLogo && (
+            <Image
+              src="/img/logo-negro.jpg"
+              alt="Jungle Waves"
+              width={110}
+              height={110}
+              className="mx-auto mb-6 rounded-lg"
+            />
+          )}
 
-        {subtitle && (
-          <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">{subtitle}</p>
-        )}
+          <h1
+            className={`font-heading font-extrabold text-white ${
+              isShort ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl lg:text-6xl"
+            }`}
+            style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.8), 0 8px 48px rgba(0,0,0,0.6)" }}
+          >
+            {title}
+          </h1>
 
-        {(cta1 || cta2) && (
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            {cta1 && (
-              <Link
-                href={cta1.href}
-                className="inline-block bg-jungle-green hover:bg-jungle-green-light text-white font-semibold px-8 py-3 rounded-md transition-colors"
-              >
-                {cta1.label}
-              </Link>
-            )}
-            {cta2 && (
-              <Link
-                href={cta2.href}
-                className="inline-block border-2 border-white text-white hover:bg-white hover:text-dark font-semibold px-8 py-3 rounded-md transition-colors backdrop-blur-sm bg-white/10 shadow-[0_2px_10px_rgba(0,0,0,0.4)]"
-              >
-                {cta2.label}
-              </Link>
-            )}
-          </div>
-        )}
+          {subtitle && (
+            <p
+              className="mt-5 text-lg md:text-xl font-medium text-white max-w-xl mx-auto"
+              style={{ textShadow: "0 1px 4px rgba(0,0,0,0.9), 0 3px 16px rgba(0,0,0,0.8)" }}
+            >
+              {subtitle}
+            </p>
+          )}
+
+          {(cta1 || cta2) && (
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              {cta1 && (
+                <Link
+                  href={cta1.href}
+                  className="inline-block bg-white text-black hover:bg-gray-200 font-bold px-9 py-3 rounded-lg transition-colors"
+                  style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.5)" }}
+                >
+                  {cta1.label}
+                </Link>
+              )}
+              {cta2 && (
+                <Link
+                  href={cta2.href}
+                  className="inline-block font-bold px-9 py-3 rounded-lg transition-colors text-white hover:bg-white hover:text-black"
+                  style={{
+                    border: "2px solid #ffffff",
+                    background: "rgba(0,0,0,0.45)",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+                    textShadow: "0 1px 4px rgba(0,0,0,0.9)",
+                  }}
+                >
+                  {cta2.label}
+                </Link>
+              )}
+            </div>
+          )}
+
 
         {breadcrumb && (
           <nav className="mt-4" aria-label="Breadcrumb">

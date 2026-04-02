@@ -2,9 +2,9 @@ export const siteData = {
   name: "Jungle Waves",
   phone: "+506 8558 8250",
   phoneLink: "tel:+50685588250",
-  email: "info@junglewaves.com",
+  email: "junglewaves.cr@gmail.com",
   address: "Uvita de Osa, Costa Rica",
-  whatsapp: "https://wa.me/50685588250",
+  whatsapp: "https://wa.me/50685588250?text=Hola%2C%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios.",
   year: 2026,
 };
 
