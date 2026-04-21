@@ -67,7 +67,7 @@ export default function Home() {
                 src: "/img/riego-pergola.jpg",
                 alt: "Riego profesional de plantas en pérgola",
                 title: "Riego Especializado",
-                text: "Sistemas de riego inteligentes que mantienen tus plantas hidratadas y saludables durante todo el año.",
+                text: "Sistemas de riego que mantienen tus plantas hidratadas y saludables durante todo el año.",
               },
               {
                 src: "/img/jardinero-flores.jpg",
