@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
-import { metadata as meta, siteData, contactInfo } from "@/content/site";
+import { siteData, contactInfo } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: meta.contacto.title,
-  description: meta.contacto.description,
+  title: "Contacto - Presupuesto Gratis en Uvita",
+  description: "Contáctanos para tu presupuesto gratuito. Servicios de jardinería y mantenimiento de piscinas en Uvita, Costa Ballena. Tel: +506 8558 8250.",
+  alternates: { canonical: "/contacto" },
+  openGraph: {
+    title: "Contacto | Jungle Waves CR",
+    description: "Solicita tu presupuesto gratuito. Uvita de Osa, Costa Rica.",
+    url: "https://www.junglewavescr.com/contacto",
+  },
 };
 
 export default function Contacto() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
@@ -5,9 +6,64 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTABanner from "@/components/CTABanner";
 import { hero } from "@/content/site";
 
+export const metadata: Metadata = {
+  title: "Jardinería y Mantenimiento de Piscinas en Uvita | Jungle Waves CR",
+  description:
+    "Transformamos tu espacio exterior. Jardinería profesional, mantenimiento de piscinas, riego y muros verdes en Uvita, Costa Ballena. Presupuesto gratis.",
+  alternates: { canonical: "/" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.junglewavescr.com/#business",
+  name: "Jungle Waves CR",
+  alternateName: "Jungle Waves",
+  description: "Servicios profesionales de jardinería y mantenimiento de piscinas en Uvita, Costa Ballena y Zona Sur de Costa Rica.",
+  url: "https://www.junglewavescr.com",
+  telephone: "+50685588250",
+  email: "junglewaves.cr@gmail.com",
+  image: "https://www.junglewavescr.com/img/poda-vista-mar.jpg",
+  logo: "https://www.junglewavescr.com/img/logo-negro.jpg",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Uvita de Osa",
+    addressLocality: "Uvita",
+    addressRegion: "Puntarenas",
+    addressCountry: "CR",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 9.1611, longitude: -83.7397 },
+  areaServed: [
+    { "@type": "Place", name: "Uvita, Costa Rica" },
+    { "@type": "Place", name: "Ojochal, Costa Rica" },
+    { "@type": "Place", name: "Dominical, Costa Rica" },
+    { "@type": "Place", name: "Costa Ballena, Costa Rica" },
+    { "@type": "Place", name: "Zona Sur, Costa Rica" },
+  ],
+  openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "07:00", closes: "17:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "07:00", closes: "11:00" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios Jungle Waves CR",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Jardinería profesional", description: "Diseño paisajístico, poda y mantenimiento de jardines tropicales." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mantenimiento de piscinas", description: "Limpieza, balanceo químico y mantenimiento integral de piscinas." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sistemas de riego", description: "Instalación y mantenimiento de sistemas de riego automatizado." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Muros verdes", description: "Diseño e instalación de jardines verticales tropicales." } },
+    ],
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero
         variant="full"
         title={hero.title}

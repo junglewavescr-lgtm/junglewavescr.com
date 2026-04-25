@@ -3,11 +3,17 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
-import { metadata as meta, gardenServices, poolServices } from "@/content/site";
+import { gardenServices, poolServices } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: meta.servicios.title,
-  description: meta.servicios.description,
+  title: "Servicios de Jardinería y Piscinas en Uvita",
+  description: "Jardinería profesional, mantenimiento de piscinas, riego automático y muros verdes. Servicios para hogares y propiedades en Uvita, Ojochal, Dominical y toda la Costa Ballena.",
+  alternates: { canonical: "/servicios" },
+  openGraph: {
+    title: "Servicios | Jungle Waves CR",
+    description: "Jardinería, piscinas, riego y muros verdes en Uvita y Costa Ballena.",
+    url: "https://www.junglewavescr.com/servicios",
+  },
 };
 
 export default function Servicios() {

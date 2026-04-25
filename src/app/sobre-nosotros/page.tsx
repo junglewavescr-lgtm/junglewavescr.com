@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
-import { metadata as meta, about } from "@/content/site";
+import { about } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: meta.sobreNosotros.title,
-  description: meta.sobreNosotros.description,
+  title: "Sobre Nosotros - Más de 10 años en Uvita",
+  description: "Conoce a Jungle Waves CR: equipo profesional con más de 10 años transformando jardines y piscinas en Uvita, Costa Ballena y la Zona Sur de Costa Rica.",
+  alternates: { canonical: "/sobre-nosotros" },
+  openGraph: {
+    title: "Sobre Nosotros | Jungle Waves CR",
+    description: "Más de 10 años transformando espacios exteriores en Uvita, Costa Rica.",
+    url: "https://www.junglewavescr.com/sobre-nosotros",
+  },
 };
 
 export default function SobreNosotros() {
